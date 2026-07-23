@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+backend/node_modules/
+
+# Environment
+.env
+backend/.env
+
+# Build
+dist/
+build/
+
+# Uploads
+backend/uploads/
+
+# Logs
+*.log
+
+# Editor
+.vscode/
+.idea/
+
+# Videos
+*.mp4
+*.mov
+*.avi
+*.mkv
+public/Gallery/2D V1.mp4
+# Uploads
+backend/uploads/
+
+# OS
+.DS_Store

@@ -1,0 +1,495 @@
+.tcPage {
+  background: #0b0b0b;
+  color: #fff;
+  padding: clamp(18px, 3vw, 34px);
+  min-height: 100vh;
+}
+
+.tcHeader {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.tcTitle {
+  font-size: clamp(26px, 3vw, 40px);
+  line-height: 1.1;
+  margin: 0;
+  font-weight: 800; 
+}
+
+.tcTitle span{
+  color:#e50914;
+}
+
+.tcSub {
+  margin: 10px 0 0;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 70ch;
+}
+
+.tcControls {
+  display: grid;
+  gap: 12px;
+}
+
+.tcSearch input {
+  width: 100%;
+  background: #121212;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 14px;
+  outline: none;
+}
+
+.tcSelectRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.tcSelectRow select {
+  width: 100%;
+  background: #121212;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  padding: 11px 12px;
+  border-radius: 14px;
+  outline: none;
+}
+
+.tcSummary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 16px 0 18px;
+}
+
+.tcStat {
+  background: #121212;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.tcStatNum {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.tcStatLabel {
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+
+.tcPass .tcStatNum { color: #58ff8a; }
+.tcFail .tcStatNum { color: #ff5a5a; }
+.tcBlocked .tcStatNum { color: #ffcc66; }
+
+.tcList {
+  display: grid;
+  gap: 12px;
+}
+
+.tcCard {
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.tcCardTop {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  padding: 14px 14px;
+  cursor: pointer;
+}
+
+.tcIdRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.tcId {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.tcBadge {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.tcBadgeStatus.tc_Pass { background: rgba(88, 255, 138, 0.12); }
+.tcBadgeStatus.tc_Fail { background: rgba(255, 90, 90, 0.12); }
+.tcBadgeStatus.tc_Blocked { background: rgba(255, 204, 102, 0.12); }
+
+.tcCardTitle {
+  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.tcMeta {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+}
+
+.tcChevron {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.tcDetails {
+  padding: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.tcGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.tcBlock {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 16px;
+  padding: 12px;
+}
+
+.tcLabel {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.tcText {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.tcSteps {
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 14px;
+}
+
+.tcTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tcTag {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.tcEmpty {
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
+
+/* ✅ Responsive */
+@media (max-width: 900px) {
+  .tcSummary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .tcGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .tcSelectRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Top row: search + create button */
+.tcTopRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Buttons */
+.tcBtnPrimary {
+  background: rgba(229, 9, 20, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.tcBtnPrimary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.tcBtnGhost {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+/* Modal */
+.tcModalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.tcModal {
+  width: min(920px, 100%);
+  max-height: min(86vh, 760px);
+  overflow: hidden;
+  background: #101010;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  box-shadow: 0 30px 120px rgba(0, 0, 0, 0.6);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.tcModalHeader {
+  padding: 14px 14px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: start;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.tcModalTitle {
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.tcModalSub {
+  margin-top: 6px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tcIconBtn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.tcModalBody {
+  padding: 14px;
+  overflow: auto;
+}
+
+.tcModalFooter {
+  padding: 14px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+/* Form grid */
+.tcFormGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.tcField {
+  display: grid;
+  gap: 6px;
+}
+
+.tcField span {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 800;
+}
+
+.tcField input,
+.tcField textarea,
+.tcField select {
+  width: 100%;
+  background: #121212;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  padding: 11px 12px;
+  border-radius: 14px;
+  outline: none;
+}
+
+.tcCol2 {
+  grid-column: span 2;
+}
+
+.tcError {
+  background: rgba(255, 90, 90, 0.12);
+  border: 1px solid rgba(255, 90, 90, 0.25);
+  color: rgba(255, 255, 255, 0.92);
+  padding: 10px 12px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .tcTopRow {
+    grid-template-columns: 1fr;
+  }
+  .tcBtnPrimary {
+    width: 100%;
+  }
+  .tcFormGrid {
+    grid-template-columns: 1fr;
+  }
+  .tcCol2 {
+    grid-column: auto;
+  }
+}
+/* ✅ sticky toolbar (premium feel) */
+.tcStickyBar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  padding: 12px 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 11, 11, 0.98),
+    rgba(11, 11, 11, 0.75),
+    rgba(11, 11, 11, 0)
+  );
+  backdrop-filter: blur(10px);
+}
+
+/* ✅ actions */
+.tcRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tcActions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.tcActionBtn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  padding: 7px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.tcActionBtn:hover {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.tcActionBtn.tcDanger {
+  border-color: rgba(248, 0, 0, 0.25);
+  background: rgba(245, 11, 11, 0.1);
+}
+
+.tcBtnDanger {
+  background: rgb(241, 12, 12) !important;
+}
+
+/* ✅ confirm modal */
+.tcConfirm {
+  width: min(520px, 100%);
+  background: #101010;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: 0 30px 120px rgba(0, 0, 0, 0.6);
+  display: grid;
+  gap: 10px;
+}
+
+.tcConfirmTitle {
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.tcConfirmText {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+}
+
+.tcConfirmStrong {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 900;
+}
+
+.tcConfirmActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+/* ✅ responsive: keep action buttons nice on small screens */
+@media (max-width: 720px) {
+  .tcActions {
+    gap: 6px;
+  }
+  .tcActionBtn {
+    padding: 6px 9px;
+    font-size: 12px;
+  }
+}

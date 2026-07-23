@@ -1,0 +1,97 @@
+.contact-column-wrapper {
+  position: fixed;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  background: transparent;
+}
+
+/* COMMON ICON STYLE */
+.social-icon,
+.call-icon-wrapper {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* FONT AWESOME ICON */
+.social-media {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* BRAND COLORS */
+.social-media.facebook {
+  color: #1877f2;
+}
+
+.social-media.instagram {
+  color: #e4405f;
+}
+
+.social-media.linkedin {
+  color: #0a66c2;
+}
+
+.social-media.youtube {
+  color: #ff0000;
+}
+
+/* CALL IMAGE */
+.call-icon-img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+}
+
+/* HOVER EFFECT */
+.social-icon:hover,
+.call-icon-wrapper:hover {
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.45));
+}
+
+/* TABLET */
+@media (max-width: 991px) {
+  .contact-column-wrapper {
+    right: 12px;
+    gap: 12px;
+  }
+
+  .social-icon,
+  .call-icon-wrapper {
+    width: 38px;
+    height: 38px;
+  }
+
+  .social-media {
+    font-size: 24px;
+  }
+
+  .call-icon-img {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .contact-column-wrapper {
+    display: none;
+  }
+}

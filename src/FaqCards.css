@@ -1,0 +1,42 @@
+.faq-card {
+  background:black;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 1.5rem;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor:progress;
+}
+.faq-section{
+  background:black;
+}
+.faq-card h5 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.faq-card p {
+  color: #b5b5b5;
+  margin: 0;
+}
+
+.faq-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.faq-section span{
+    color:#e50914;
+}
+
+@media(max-width:768px){
+  .faq-section{
+    background:black;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+  .faq-section{
+    background:black;
+  }
+}

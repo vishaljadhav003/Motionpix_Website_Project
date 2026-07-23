@@ -1,0 +1,134 @@
+.work-process {
+  padding: 100px 8%;
+  background:black;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+.process-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 70px;
+}
+.process-header span {
+  color: #e50914;
+}
+
+.process-header h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.process-header p {
+  margin-top: 16px;
+  color: #b9c7cf;
+  line-height: 1.6;
+}
+
+/* WRAPPER */
+.process-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* VIDEO */
+.process-video video {
+  width: 100%;
+  border-radius: 22px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+  display:block;
+}
+
+/* STEPS */
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.process-card {
+  padding: 26px 28px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width:100%;
+}
+
+.process-card h3 {
+  font-size: 1.4rem;
+  margin: 10px 0;
+}
+
+.process-card p {
+  color: #cfd8dc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* STEP TAG */
+.step-tag {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  border-radius: 50%;
+  background: #ff0000;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.process-card ul {
+  margin-top: 10px;
+  padding-left: 18px;
+}
+
+.process-card ul li {
+  color: #cfd8dc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* Better mobile spacing */
+@media (max-width: 576px) {
+  .process-card {
+    padding: 22px 20px;
+  }
+
+  .process-card h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .process-wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .process-steps {
+    align-items: center;
+  }
+
+  .process-card {
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 576px) {
+  .process-header h2 {
+    font-size: 2rem;
+  }
+
+  .work-process {
+    padding: 80px 20px;
+  }
+}

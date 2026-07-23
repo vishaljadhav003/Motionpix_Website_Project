@@ -1,0 +1,145 @@
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+   min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* 🔥 BACKGROUND IMAGE */
+  background-image: url("https://img.freepik.com/free-vector/abstract-red-lights-background_1182-622.jpg?t=st=1769057493~exp=1769061093~hmac=fc271017bdcfc00beafdea1860f80ed77404b4afc1bfa5a9e1db0685a7871cf6&w=1060");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-color: #000;
+}
+
+/* Overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2); /* strong for red theme */
+  z-index: 1;
+}
+
+/* Hero content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-logo {
+  display: block;
+  max-width: 100px;
+  margin: 0 auto 1rem auto;
+}
+
+@media (max-width: 576px) {
+  .hero-logo {
+    max-width: 70px;
+    margin: 0 auto 1rem auto;
+  }
+}
+
+/* Heading */
+.hero-content h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+/* Text */
+.hero-content h6 {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 1.5rem;
+}
+
+/* Highlight */
+.hero-content span {
+  color: #e50914;
+}
+
+/* =========================
+   STATS / COUNTERS
+========================= */
+
+.hero-content .row {
+  margin-top: 2rem;
+}
+
+.hero-content .row h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.hero-content .row p {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #bdbdbd;
+  margin-top: 0.25rem;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-content .row h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+}
+/* Hide physics on mobile, show on desktop */
+.mobile-only {
+  display: block;
+}
+
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  /* Desktop */
+  .mobile-only {
+    display: none !important;
+  }
+  .desktop-only {
+    display: block !important;
+  }
+}
+@media (max-width: 768px) {
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-logo {
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 1rem;
+  }
+}

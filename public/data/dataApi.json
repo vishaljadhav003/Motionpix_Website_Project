@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "AI Transforming Creative Industries",
+    "description": "How artificial intelligence is reshaping modern design and media.",
+    "category": "News",
+    "image": "/images/data/news1.jpg",
+    "content": "Artificial intelligence is changing creative workflows.\nFrom automation to generative design, AI enables faster and smarter production.\nBrands are adopting AI-driven pipelines to stay competitive."
+  },
+  {
+    "id": 2,
+    "title": "Design Trends for Modern Brands",
+    "description": "A deep dive into minimal, immersive and motion-first designs.",
+    "category": "Blogs",
+    "image": "/images/data/blog1.jpg",
+    "content": "Modern brands focus on simplicity and clarity.\nMotion UI and micro-interactions improve engagement.\nConsistency across platforms builds trust."
+  },
+  {
+    "id": 3,
+    "title": "E-commerce Growth Case Study",
+    "description": "How a retail brand scaled conversions using UI optimization.",
+    "category": "TestCases",
+    "image": "/images/data/case1.jpg",
+    "content": "This case study highlights UX improvements.\nPerformance optimization led to higher conversions.\nData-driven decisions created measurable impact."
+  },
+  {
+    "id": 4,
+    "title": "Future of Web Technologies",
+    "description": "A white paper on emerging web and frontend technologies.",
+    "category": "White Papers",
+    "image": "/images/data/white1.jpg",
+    "content": "Web technologies evolve rapidly.\nFrameworks focus on performance and scalability.\nProgressive enhancement is the future."
+  }
+]

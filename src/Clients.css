@@ -1,0 +1,137 @@
+
+.clients-section{
+  background:black;
+}
+/* Card */
+.client-card {
+  background: #111;
+  padding: 20px;
+  border-radius: 14px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  animation: fadeUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+/* Logo */
+.client-logo {
+  max-height: 70px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: all 0.4s ease;
+}
+
+/* Hover effects */
+.client-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.25);
+}
+
+.client-card:hover .client-logo {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* Entrance animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.clients-section span{
+  color:#e50914;
+}
+
+
+/* Responsive text */
+@media (max-width: 576px) {
+  .client-logo {
+    max-height: 55px;
+  }
+}
+/* Section background */
+
+
+/* Marquee wrapper */
+.clients-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Track animation */
+.clients-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+/* Individual item */
+.client-marquee-item {
+  min-width: 180px;
+}
+
+/* Pause on hover */
+.clients-marquee:hover .clients-track {
+  animation-play-state: paused;
+}
+
+/* Logo */
+.client-logo {
+  max-height: 70px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: all 0.4s ease;
+}
+
+/* Hover effects */
+.client-card {
+  background: #111;
+  padding: 20px;
+  border-radius: 14px;
+  transition: all 0.4s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
+}
+
+.client-card:hover .client-logo {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .client-marquee-item {
+    min-width: 140px;
+  }
+
+  .client-logo {
+    max-height: 55px;
+  }
+  .clients-section{
+    background:black;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+  .clients-section{background:black;}
+}

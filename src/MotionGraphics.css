@@ -1,0 +1,268 @@
+/* PAGE BASE */
+.mg-page {
+  background: radial-gradient(circle at top, #0b0b0b, #000);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.mg-hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.mg-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+}
+
+.mg-hero span {
+  color: #e50914;
+}
+
+.mg-hero p {
+  max-width: 680px;
+  margin-top: 18px;
+  color: #bdbdbd;
+  line-height: 1.7;
+}
+
+/* AUTO PLAYING TEXT MOTION */
+.text-motion {
+  width: 100%;
+  overflow: hidden;
+  margin: 26px 0;
+}
+
+.text-track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  animation: scrollText 18s linear infinite;
+}
+
+.text-track span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(229, 9, 20, 0.15);
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* VIDEO */
+.mg-video {
+  padding: 80px 8%;
+  display: flex;
+  justify-content: center;
+}
+
+.video-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 30px 80px rgba(229, 9, 20, 0.35);
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SERVICES */
+.mg-services {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  padding: 22px;
+  margin-top:30px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 600;
+  transition: all 0.35s ease;
+}
+.mg-cta span{
+  color:#e50914;
+}
+.service-card:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(136deg, #b30000, #ff1a1a);
+  color:black;
+  /* border:3px solid black; */
+}
+
+/* CTA */
+.mg-cta {
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.mg-cta h2 {
+  font-size: 2.4rem;
+}
+
+.mg-cta p {
+  max-width: 600px;
+  margin: 14px auto 28px;
+  color: #bdbdbd;
+}
+
+.cta-btn {
+  padding: 14px 42px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(to right, #b30000, #ff1a1a);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.9s ease;
+}
+
+.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .text-track span {
+    font-size: 1rem;
+  }
+}
+
+.faq-container-motion {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  gap: 20px;
+}
+
+.faq-item-motion {
+  background: rgba(255,255,255,0.06);
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.faq-item-motion h4 {
+  margin-bottom: 10px;
+  color: #e50914;
+}
+
+.faq-item-motion p {
+  color: #b0b0b0;
+  line-height: 1.6;
+}
+
+/* FAQ ACCORDION */
+.faq-item-motion {
+  background: rgba(255,255,255,0.06);
+  padding: 18px 20px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-item-motion:hover {
+  box-shadow: 0 10px 30px rgba(229, 9, 20, 0.2);
+}
+
+.faq-question-motion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question-motion h4 {
+  margin: 0;
+  color: #e50914;
+  font-size: 1.05rem;
+}
+
+.faq-question-motion span {
+  font-size: 1.6rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+/* ROTATE ICON */
+.faq-item-motion.active .faq-question-motion span {
+  transform: rotate(180deg);
+}
+
+/* ANSWER ANIMATION */
+.faq-answer-motion {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.faq-answer-motion p {
+  margin-top: 12px;
+  color: #b0b0b0;
+  line-height: 1.6;
+}
+
+/* ACTIVE OPEN */
+.faq-item-motion.active .faq-answer-motion {
+  max-height: 200px;
+}
+
+/* MOBILE SAFE */
+@media (max-width: 576px) {
+  .faq-question-motion h4 {
+    font-size: 0.95rem;
+  }
+}

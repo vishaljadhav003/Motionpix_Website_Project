@@ -1,0 +1,65 @@
+/* =======================
+   SCROLL SPACE
+======================= */
+.logo-scroll-section {
+  height: 220vh;
+  position: relative;
+
+  overflow: visible; /* ✅ ensures sticky works on mobile */
+  background:black;
+}
+
+/* =======================
+   STICKY CENTER
+======================= */
+.logo-sticky {
+  position: sticky;
+  top: 0;
+
+  height: 100vh;
+  min-height: 100svh; /* ✅ mobile safe viewport */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =======================
+   CANVAS HOLDER
+======================= */
+.logo-canvas-wrapper {
+  width: min(360px, 70vw);
+  max-width: 90vw;       /* ✅ prevents overflow on small phones */
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =======================
+   MOBILE
+======================= */
+@media (max-width: 768px) {
+
+  .logo-scroll-section {
+    height: 200vh;
+    background-color: black; /* ✅ slightly shorter = better mobile UX */
+  }
+
+  .logo-sticky {
+    height: 100svh; /* ✅ true mobile viewport height */
+  }
+
+  .logo-canvas-wrapper {
+    width: 80vw;
+    max-width: 320px; /* ✅ perfect visual balance */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+
+  .logo-scroll-section{
+    background:black;
+  }
+}

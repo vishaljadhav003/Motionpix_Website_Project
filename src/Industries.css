@@ -1,0 +1,280 @@
+/* /* =========================
+   SECTION
+========================= */
+
+.industries-stats-section {
+  background:black;
+  padding: 100px 0;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.industry-card {
+  position: relative;
+  height: 360px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000;
+  cursor: pointer;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
+  transition: transform 0.5s ease;
+   overflow: hidden;
+}
+
+
+.industry-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Image / Video */
+.industry-card img,
+.industry-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.industry-card:hover img,
+.industry-card:hover video {
+  transform: scale(1.08);
+}
+
+/* =========================
+   CURSOR GLOW
+========================= */
+
+.industry-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(229, 9, 20, 0.35),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.industry-card:hover::after {
+  opacity: 1;
+}
+
+/* =========================
+   OVERLAY CONTENT
+========================= */
+
+.industry-overlay {
+  position: absolute;
+  inset: 0;
+  /* background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.25)
+  ); */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  color: #fff;
+}
+
+.industries-stats-section span{
+
+  color:white;
+
+}
+.industry-overlay::before {
+  content: "";
+  width: 40px;
+  height: 3px;
+  background: #e50914;
+  margin-bottom: 12px;
+}
+
+.industry-overlay h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.industry-overlay p {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* =========================
+   STATS (PPT STYLE)
+========================= */
+
+.industry-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.industry-stats span {
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  white-space: nowrap;
+}
+.text-red span {
+  color:#e50914;
+}
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .industry-card {
+    height: 280px;
+  }
+
+  .industry-overlay {
+    padding: 20px;
+  }
+  .industries-stats-section{
+    background:black;
+  }
+  
+}
+
+@media (max-width: 576px) {
+  .industries-stats-section {
+    padding: 70px 0;
+  }
+
+  .industry-card {
+    height: 240px;
+  }
+}
+
+/* Disable hover effects on touch devices */
+@media (hover: none) {
+  .industry-card:hover {
+    transform: none;
+  }
+
+  .industry-card::after {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+  .industries-stats-section{
+    background:black;
+  }
+}
+/* =========================
+   FLIP CARD CORE
+========================= */
+
+.flip-card {
+  perspective: 1200px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+/* Flip on hover (desktop only) */
+@media (hover: hover) {
+  .flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+/* =========================
+   FRONT & BACK
+========================= */
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* FRONT */
+.flip-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================
+   EDGE TITLE
+========================= */
+
+.edge-title {
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: right center;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 8px 16px;
+  border-radius: 12px 12px 0 0;
+}
+
+.edge-title span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: white;
+  white-space: nowrap;
+}
+
+/* =========================
+   BACK FACE
+========================= */
+
+.flip-back {
+  transform: rotateY(180deg);
+  background: #000;
+}
+
+/* Keep your overlay styling */
+.flip-back .industry-overlay {
+  inset: 0;
+  height: 100%;
+}
+
+/* =========================
+   MOBILE FALLBACK
+========================= */
+
+/* Touch + small screens flip (UP TO 1280px) */
+@media (max-width: 1280px) {
+  .flip-card.is-flipped .flip-inner {
+    transform: rotateY(180deg);
+  }
+  
+}
+

@@ -1,0 +1,311 @@
+.viWrap {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: #000;
+  overflow: hidden;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+.viExit {
+  opacity: 0;
+  transform: scale(1.01);
+  pointer-events: none;
+}
+
+.viVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* cinematic */
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.02);
+}
+
+/* Premium cinematic overlay (subtle) */
+/* .viOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 55% 35%, rgba(255, 255, 255, 0.08), transparent 55%),
+    radial-gradient(circle at 15% 85%, rgba(229, 9, 20, 0.12), transparent 55%),
+    linear-gradient(to bottom, rgba(0,0,0,0.20), rgba(0,0,0,0.60));
+  pointer-events: none;
+} */
+
+/* Tap to play button */
+.viTap {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  gap: 8px;
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+  border: none;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.95);
+  padding: 24px;
+  text-align: center;
+}
+
+.viTapTitle {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.viTapSub {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* Optional skip */
+.viSkip {
+  position: absolute;
+  top: calc(16px + env(safe-area-inset-top, 0px));
+  right: calc(16px + env(safe-area-inset-right, 0px));
+
+  background: rgba(16, 16, 16, 0.65);
+  color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  padding: 10px 14px;
+
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.viSkip:active {
+  transform: scale(0.98);
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+  .viTapTitle { font-size: 16px; }
+  .viTapSub { font-size: 12px; }
+  .viSkip { padding: 9px 12px; font-size: 12px; }
+}
+
+.lrLoader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 99999;
+  pointer-events: all;
+}
+
+/* ✅ Fullscreen video behind */
+.lrVideo {
+   position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 520ms ease;
+}
+
+/* ✅ premium overlay */
+/* .lrOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 55% 35%, rgba(255, 255, 255, 0.08), transparent 55%),
+    radial-gradient(circle at 15% 85%, rgba(229, 9, 20, 0.12), transparent 55%),
+    linear-gradient(to bottom, rgba(0,0,0,0.10), rgba(0,0,0,0.55));
+  pointer-events: none;
+  transition: opacity 520ms ease;
+} */
+
+/* ✅ autoplay blocked */
+.lrTap {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  gap: 8px;
+
+  border: none;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  padding: 24px;
+}
+
+.lrTapTitle {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.lrTapSub {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* ✅ Skip button */
+.lrSkip {
+  position: fixed;
+  top: calc(16px + env(safe-area-inset-top, 0px));
+  left: calc(16px + env(safe-area-inset-left, 0px));
+  z-index: 100000;
+
+  background: rgba(16, 16, 16, 0.65);
+  color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  padding: 10px 14px;
+
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.lrSkip:active {
+  transform: scale(0.98);
+}
+
+/* ---------- तुझं existing CSS (unchanged) ---------- */
+
+/* Top-right badge */
+.lrCorner {
+  position: fixed;
+  top: calc(16px + env(safe-area-inset-top, 0px));
+  right: calc(16px + env(safe-area-inset-right, 0px));
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+
+  background: rgba(16, 16, 16, 0.78);
+  backdrop-filter: blur(12px);
+
+  display: grid;
+  place-items: center;
+
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.60);
+  overflow: hidden;
+
+  transform: translateY(0) scale(1);
+  opacity: 1;
+
+  animation: lrPop 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition:
+    opacity 520ms ease,
+    transform 750ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* (Optional) subtle glow */
+.lrCorner::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 14px;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.18), transparent 60%);
+  opacity: 0.45;
+  filter: blur(10px);
+  animation: lrGlow 1.6s ease-in-out infinite;
+}
+
+@keyframes lrGlow {
+  0%, 100% { opacity: 0.35; transform: scale(0.98); }
+  50% { opacity: 0.55; transform: scale(1.02); }
+}
+
+@keyframes lrPop {
+  from { opacity: 0; transform: translateY(-8px) scale(0.92); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* SVG border overlay */
+.lrBorderSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform: none;
+  transform-origin: 50% 50%;
+}
+
+.lrBorderBase {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.28);
+  stroke-width: 1.4;
+}
+
+.lrBorderProg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.92);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+
+  filter:
+    drop-shadow(0 0 6px rgba(255, 255, 255, 0.35))
+    drop-shadow(0 0 14px rgba(255, 255, 255, 0.18));
+
+  transition: stroke-dashoffset 140ms linear;
+}
+
+.lrCornerInner {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.lrNum {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.02em;
+}
+
+/* Exit (avoid white flash by fading video + overlay too) */
+.lrCorner.animateOut {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.98);
+}
+
+.lrVideo.animateOut {
+  opacity: 0;
+}
+
+.lrOverlay.animateOut {
+  opacity: 0;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+  .lrCorner {
+    width: 58px;
+    height: 58px;
+    top: calc(12px + env(safe-area-inset-top, 0px));
+    right: calc(12px + env(safe-area-inset-right, 0px));
+    border-radius: 11px;
+  }
+  .lrNum { font-size: 21px; }
+
+  .lrTapTitle { font-size: 16px; }
+  .lrTapSub { font-size: 12px; }
+  .lrSkip { padding: 9px 12px; font-size: 12px; }
+}

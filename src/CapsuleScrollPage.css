@@ -1,0 +1,164 @@
+:root {
+  --nav-h: 80px;
+}
+
+.ctWrap {
+  --fm-green: #000;
+  position: relative;
+  width: 100%;
+  min-height: 320vh;
+  margin: 5px 0;
+  overflow: hidden;
+  background: var(--fm-green);
+}
+
+.ctScrollSpace {
+  height: 320vh;
+}
+
+.ctPin {
+  position: fixed;
+  top: var(--nav-h);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: calc(100dvh - var(--nav-h));
+  background: var(--fm-green);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.ctPin.isPinned {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#scroll-canvas {
+  display: block;
+  width: 100%;
+  height: calc(100dvh - var(--nav-h));
+}
+
+.ctHiddenVideo {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* =========================
+   JOYSTICK
+========================= */
+
+.ctJoystickWrap {
+  position: absolute;
+  top: 50%;
+  right: clamp(48px, 5vw, 72px);
+  z-index: 6;
+  transform: translateY(-50%);
+  pointer-events: auto;
+}
+
+.ctJoystickRail {
+  position: relative;
+  width: 16px;
+  height: min(56vh, 360px);
+  overflow: visible;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  cursor: pointer;
+  touch-action: none;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.08)
+  );
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 14px 34px rgba(0, 0, 0, 0.34),
+    0 0 24px rgba(255, 0, 0, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.ctJoystickFill {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(180deg, #ff6a6a 0%, #ff2a2a 45%, #a80000 100%);
+  box-shadow:
+    0 0 16px rgba(255, 59, 59, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.ctJoystickThumb {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: grab;
+  pointer-events: none;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #d8d8d8 70%);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.34),
+    0 0 0 7px rgba(255, 255, 255, 0.08),
+    0 0 18px rgba(255, 70, 70, 0.14);
+}
+
+.ctJoystickRail:active .ctJoystickThumb {
+  cursor: grabbing;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --nav-h: 70px;
+  }
+
+  .ctWrap,
+  .ctScrollSpace {
+    min-height: 300vh;
+    height: 300vh;
+  }
+
+  .ctJoystickWrap {
+    right: 18px;
+  }
+
+  .ctJoystickRail {
+    width: 13px;
+    height: min(46vh, 260px);
+  }
+
+  .ctJoystickThumb {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ctJoystickWrap {
+    right: 14px;
+  }
+
+  .ctJoystickRail {
+    width: 11px;
+    height: min(40vh, 220px);
+  }
+
+  .ctJoystickThumb {
+    width: 22px;
+    height: 22px;
+  }
+}

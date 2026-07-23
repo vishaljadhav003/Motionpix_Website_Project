@@ -1,0 +1,319 @@
+.contact-section {
+  position: relative;
+  padding: 80px 0 96px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 0, 0, 0.12), transparent 26%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.04), transparent 22%),
+    linear-gradient(180deg, #050505 0%, #0c0c0c 45%, #111111 100%);
+  overflow: hidden;
+}
+.contact-title span{
+  color:#e50914;
+}
+/* background premium glow orbs */
+.contact-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.contact-bg-orb-one {
+  top: 8%;
+  left: -40px;
+  width: 220px;
+  height: 220px;
+  background: rgba(254, 0, 0, 0.16);
+}
+
+.contact-bg-orb-two {
+  right: -50px;
+  bottom: 10%;
+  width: 260px;
+  height: 260px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.contact-heading-wrap {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 38px;
+}
+
+.contact-kicker {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ff0000;
+}
+
+.contact-title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+}
+
+.contact-subtitle {
+  max-width: 680px;
+  margin: 14px auto 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.7;
+}
+
+.contact-form-shell {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-form-card {
+  position: relative;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 34px;
+  border-radius: 28px;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 18, 18, 0.9) 0%,
+    rgba(10, 10, 10, 0.96) 100%
+  );
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+/* thin premium border */
+.contact-form-border {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(254, 0, 0, 0.22),
+    rgba(255, 255, 255, 0.05)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.contact-form-glow {
+  position: absolute;
+  left: -80px;
+  bottom: -100px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(254, 0, 0, 0.16), transparent 72%);
+  pointer-events: none;
+  filter: blur(10px);
+}
+
+.contact-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+.contact-input {
+  min-height: 56px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  color: #ffffff;
+  padding: 14px 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  transition:
+    border-color 0.3s ease,
+    transform 0.25s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.contact-input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 500;
+}
+
+.contact-input:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(254, 0, 0, 0.8);
+  color: #ffffff;
+  box-shadow:
+    0 0 0 0.2rem rgba(254, 0, 0, 0.12),
+    0 8px 25px rgba(254, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.contact-input:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.contact-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+.contact-select option {
+  background: #121212;
+  color: #ffffff;
+}
+
+.contact-textarea {
+  min-height: 140px;
+  resize: vertical;
+  padding-top: 16px;
+}
+
+.contact-submit-btn {
+  min-width: 220px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #2a0808 0%, #8f1111 45%, #fe0000 100%);
+  box-shadow:
+    0 14px 32px rgba(254, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease,
+    filter 0.25s ease;
+}
+
+.contact-submit-btn:hover {
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow:
+    0 22px 42px rgba(254, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  filter: saturate(1.08);
+}
+
+.contact-submit-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 991.98px) {
+  .contact-section {
+    padding: 68px 0 82px;
+  }
+
+  .contact-form-card {
+    padding: 28px 24px;
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .contact-heading-wrap {
+    margin-bottom: 28px;
+  }
+
+  .contact-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  .contact-form-card {
+    padding: 22px 16px;
+    border-radius: 20px;
+  }
+
+  .contact-input {
+    min-height: 52px;
+    border-radius: 14px;
+    font-size: 0.96rem;
+  }
+
+  .contact-textarea {
+    min-height: 120px;
+  }
+
+  .contact-submit-btn {
+    width: 100%;
+    min-width: 100%;
+    padding: 14px 18px;
+  }
+
+  .contact-bg-orb-one {
+    width: 180px;
+    height: 180px;
+  }
+
+  .contact-bg-orb-two {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .contact-section {
+    padding: 56px 0 66px;
+  }
+
+  .contact-kicker {
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+  }
+
+  .contact-title {
+    line-height: 1.12;
+  }
+
+  .contact-label {
+    font-size: 0.92rem;
+  }
+}
+
+/* Scroll Reveal */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(42px) scale(0.98);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-delay {
+  transition-delay: 0.14s;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-reveal-delay,
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

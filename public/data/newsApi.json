@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Studio Launches Cinematic Animation Pipeline",
+    "slug": "cinematic-animation-pipeline",
+    "category": "Studio",
+    "description": "A next-generation animation workflow focused on realism and storytelling.",
+    "image": "/images/news/news1.jpg",
+    "content": "Our studio has officially launched a cinematic animation pipeline.\n\nThis pipeline focuses on realism, advanced lighting, and performance-driven animation.\n\nIt allows teams to create visually rich narratives faster while maintaining creative control."
+  },
+  {
+    "id": 2,
+    "title": "AI Integrated Into Motion Design Process",
+    "slug": "ai-motion-design-process",
+    "category": "Technology",
+    "description": "AI tools are now part of our creative acceleration strategy.",
+    "image": "/images/news/news2.jpg",
+    "content": "Artificial Intelligence is now integrated into our motion design workflow.\n\nFrom concept ideation to animation refinement, AI accelerates production while preserving artistic intent."
+  },
+  {
+    "id": 3,
+    "title": "Digital Marketing Campaign Hits Global Scale",
+    "slug": "digital-marketing-global-scale",
+    "category": "Marketing",
+    "description": "A multi-region campaign achieved record engagement across platforms.",
+    "image": "/images/news/news3.jpg",
+    "content": "Our digital marketing campaign expanded across multiple regions.\n\nWith data-driven storytelling and performance optimization, the campaign reached millions globally."
+  },
+  {
+    "id": 4,
+    "title": "3D Product Visualization Redefines Brand Experience",
+    "slug": "3d-product-visualization-brand-experience",
+    "category": "Design",
+    "description": "High-fidelity 3D visuals are transforming how brands present products.",
+    "image": "/images/news/news4.jpg",
+    "content": "3D product visualization enables immersive brand storytelling.\n\nCustomers can now explore products interactively before making decisions."
+  },
+  {
+    "id": 5,
+    "title": "Real-Time Web Animations Enhance User Engagement",
+    "slug": "real-time-web-animations-engagement",
+    "category": "Web",
+    "description": "Advanced animations improve retention and interaction on modern websites.",
+    "image": "/images/news/news5.jpg",
+    "content": "Real-time web animations create emotional connections with users.\n\nThey enhance usability while maintaining performance and accessibility."
+  },
+  {
+    "id": 6,
+    "title": "Creative Studio Expands Global Partnerships",
+    "slug": "creative-studio-global-partnerships",
+    "category": "Business",
+    "description": "Strategic collaborations drive innovation across markets.",
+    "image": "/images/news/news6.jpg",
+    "content": "Our studio has expanded partnerships across global markets.\n\nThese collaborations foster innovation, scalability, and long-term growth."
+  }
+]

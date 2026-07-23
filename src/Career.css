@@ -1,0 +1,362 @@
+.career-page {
+  background: radial-gradient(circle at top, #0b0b0b, #000);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* HERO */
+.career-hero {
+  min-height: 80vh;
+  text-align: center;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.career-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+}
+
+.career-hero span {
+  color: #e50914;
+}
+
+.career-hero p {
+  max-width: 600px;
+  margin: 18px auto 30px;
+  color: #bdbdbd;
+}
+
+/* WHY US */
+.career-why {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.why-grid-career {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  cursor: pointer;
+}
+
+.why-card-career {
+  margin-top:20px;
+  padding: 24px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 600;
+}
+
+.why-card-career:hover{
+  cursor:pointer;
+  background: linear-gradient(135deg,#b30000,#ff1a1a);
+  border:1px solid black;
+}
+
+/* JOBS */
+.career-jobs {
+  padding: 80px 8%;
+}
+
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.job-card {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 26px;
+  border-radius: 16px;
+  margin-top:20px;
+}
+
+.job-card h3 {
+  margin-bottom: 8px;
+}
+
+.job-card p {
+  color: #bdbdbd;
+  margin-bottom: 16px;
+}
+
+.job-btn {
+  background: transparent;
+  border: 1px solid whitesmoke;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.job-btn:hover{
+  /* cursor:pointer; */
+  background: linear-gradient(135deg,#b30000,#ff1a1a);
+  color:black;
+  border:1px solid black;
+}
+
+/* FORM */
+.career-form {
+  padding: 90px 8%;
+  max-width: 700px;
+  margin: auto;
+
+}
+
+.career-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top:30px;
+}
+
+.career-form input,
+.career-form textarea {
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.career-form textarea {
+  min-height: 120px;
+}
+
+/* CTA BUTTON */
+.cta-btn {
+  margin-top: 12px;
+  padding: 14px 36px;       /* horizontal padding */
+  width: fit-content;       /* 🔥 prevents full width */
+  align-self: center;       /* center button */
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(to right, #b30000, #ff1a1a);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+}
+.cta-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.9s ease;
+}
+
+.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.upload-box {
+  position: relative;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 14px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.upload-box input {
+  display: none;
+}
+
+.upload-box span {
+  color: #ccc;
+  font-weight: 500;
+}
+
+/* JOB DETAIL */
+.career-job-detail {
+  padding: 70px 8%;
+  max-width: 900px;
+  margin: auto;
+  background: rgba(255,255,255,0.05);
+  border-radius: 18px;
+}
+
+.job-meta {
+  color: #bdbdbd;
+  font-weight: 600;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.job-description {
+  white-space: pre-wrap;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  background: rgba(0,0,0,0.4);
+  padding: 24px;
+  border-radius: 14px;
+  overflow-x: auto;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .why-grid-career,
+  .jobs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .why-grid-career,
+  .jobs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* JOBS */
+.career-jobs {
+  padding: 80px 8%;
+}
+
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* =======================================
+   JOB CARD - RADIAL EXPAND HOVER EFFECT
+======================================= */
+
+.job-card {
+  position: relative;
+  overflow: hidden; /* important */
+  isolation: isolate;
+
+  background: rgba(255, 255, 255, 0.06);
+  padding: 26px;
+  border-radius: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.35s ease;
+}
+
+/* smooth lift */
+.job-card:hover {
+  transform: translateY(-6px);
+}
+
+/* expanding circle background */
+.job-card::before {
+  content: "";
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%) scale(0);
+  transform-origin: center;
+
+  border-radius: 50%;
+  background: linear-gradient(135deg, #b30000, #ff1a1a);
+
+  z-index: 0;
+  transition: transform 0.7s ease-in-out;
+}
+
+/* hover trigger */
+.job-card:hover::before {
+  transform: translate(-50%, -50%) scale(4);
+}
+
+/* keep content above circle */
+.job-card h3,
+.job-card p,
+.job-card .job-btn {
+  position: relative;
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+
+.job-card h3 {
+  margin-bottom: 8px;
+}
+
+/* normal text */
+.job-card p {
+  color: #bdbdbd;
+  margin-bottom: 16px;
+}
+
+/* text color change on hover */
+.job-card:hover h3,
+.job-card:hover p {
+  color: #ffffff;
+}
+
+/* button */
+.job-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.8);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+
+  transition: all 0.4s ease;
+}
+
+/* button hover inside expanded card */
+.job-card:hover .job-btn {
+  background: #ffffff;
+  color: #b30000;
+  border: 1px solid #ffffff;
+}
+
+/* =======================================
+   RESPONSIVE
+======================================= */
+
+@media (max-width: 992px) {
+  .why-grid-career,
+  .jobs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .job-card::before {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .why-grid-career,
+  .jobs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .job-card {
+    padding: 22px;
+  }
+
+  .job-card::before {
+    width: 160px;
+    height: 160px;
+  }
+}

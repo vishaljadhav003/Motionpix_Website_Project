@@ -1,0 +1,804 @@
+/* ================= GLOBAL ================= */
+.chatbot-global {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  font-family: "Inter", "Poppins", sans-serif;
+}
+
+/* ================= FLOAT BUTTON ================= */
+.chat-toggle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  transition: all 0.25s ease;
+}
+
+.chat-toggle:hover {
+  transform: scale(1.08);
+  background: #1a1a1a;
+}
+
+/* ================= WINDOW ================= */
+.chat-window {
+  width: 360px;
+  max-width: 95vw;
+  height: 540px;
+  max-height: 90vh;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  /* GLASS EFFECT */
+  background: rgba(20,20,20,0.65);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  animation: fadeIn 0.25s ease;
+  color: #fff;
+}
+
+/* ================= HEADER ================= */
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+
+  background: rgba(0,0,0,0.6);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.chat-title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.chat-title h4 {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.chat-title p {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  margin: 0;
+}
+
+/* ACTION BUTTONS */
+.actions button {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  margin-left: 6px;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.actions button:hover {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+/* ================= BODY ================= */
+.chat-body {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-body::-webkit-scrollbar {
+  width: 4px;
+}
+.chat-body::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}
+
+/* ================= MESSAGES ================= */
+.msg {
+  max-width: 80%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  animation: fadeMsg 0.2s ease;
+}
+
+/* USER */
+.msg.user {
+  align-self: flex-end;
+  background: #2a2a2a;
+  border-bottom-right-radius: 4px;
+}
+
+/* BOT */
+.msg.assistant {
+  align-self: flex-start;
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-bottom-left-radius: 4px;
+  white-space: pre-wrap;
+}
+
+/* ================= MESSAGE FOOTER ================= */
+.msg-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.msg-footer span {
+  font-size: 10px;
+  opacity: 0.5;
+}
+
+/* COPY BUTTON */
+.msg-footer button {
+  background: transparent;
+  border: none;
+  color: #888;
+  padding: 4px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.msg-footer button:hover {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+/* ================= INPUT ================= */
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 8px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* INPUT FIELD */
+.chat-input input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 0.85rem;
+
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+}
+
+/* ================= BUTTONS ================= */
+.voice-btn,
+.send-btn,
+.file-btn {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* HOVER CLEAN */
+.voice-btn:hover,
+.send-btn:hover,
+.file-btn:hover {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+/* SEND ICON SPECIAL */
+.send-btn {
+  font-size: 16px;
+}
+
+/* ================= SUGGESTIONS ================= */
+.chat-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px;
+}
+
+.chat-suggestions button {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #ccc;
+  padding: 6px 10px;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.chat-suggestions button:hover {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+/* ================= LOTTIE ================= */
+.lottie-avatar {
+  width: 36px;
+  height: 36px;
+}
+
+.thinking-bot {
+  width: 24px;
+  height: 24px;
+}
+
+/* ================= GLASS TOAST ================= */
+.copy-toast {
+  position: absolute;
+  bottom: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 8px 14px;
+  font-size: 0.75rem;
+  border-radius: 20px;
+
+  /* GLASS EFFECT */
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+
+  animation: toastFade 0.3s ease;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeMsg {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toastFade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
+  .chat-window {
+    width: 100%;
+    height: 92vh;
+    border-radius: 14px;
+  }
+
+  .chat-toggle {
+    width: 52px;
+    height: 52px;
+  }
+
+  .msg {
+    font-size: 0.8rem;
+  }
+
+  .copy-toast {
+    bottom: 70px;
+    font-size: 0.7rem;
+  }
+}
+
+/* ================= HOVER ACTIONS ================= */
+.msg {
+  position: relative;
+}
+
+.msg-footer button {
+  opacity: 0;
+  transition: 0.2s ease;
+}
+
+.msg:hover .msg-footer button {
+  opacity: 1;
+}
+
+/* ================= CODE BLOCK (MARKDOWN) ================= */
+.msg pre {
+  background: #0d0d0d;
+  padding: 10px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.8rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  margin-top: 6px;
+}
+
+.msg code {
+  font-family: "Fira Code", monospace;
+  color: #e6e6e6;
+}
+
+/* INLINE CODE */
+.msg p code {
+  background: rgba(255,255,255,0.08);
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+}
+
+/* ================= IMAGE PREVIEW ================= */
+.msg img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.msg img:hover {
+  transform: scale(1.03);
+}
+
+/* ================= IMAGE MODAL ================= */
+.img-preview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.img-preview-overlay img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 12px;
+}
+
+/* ================= SMOOTH MARKDOWN ================= */
+.msg-text p {
+  margin: 0;
+}
+
+.msg-text ul {
+  padding-left: 18px;
+}
+
+.msg-text li {
+  margin-bottom: 4px;
+}
+
+/* ================= MOBILE IMPROVEMENTS ================= */
+@media (max-width: 480px) {
+  .msg pre {
+    font-size: 0.7rem;
+  }
+
+  .msg img {
+    border-radius: 8px;
+  }
+}
+.intro-screen {
+  text-align: center;
+  margin-top: 40%;
+  opacity: 0.8;
+}
+
+.intro-screen h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.intro-screen p {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.chat-sidebar {
+  width: 80px;
+  background: rgba(0,0,0,0.5);
+  border-right: 1px solid rgba(255,255,255,0.06);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.chat-sidebar div {
+  font-size: 10px;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media (max-width: 480px) {
+
+  .chat-window {
+    flex-direction: column;
+  }
+
+  .chat-sidebar {
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .chat-sidebar div {
+    white-space: nowrap;
+  }
+
+}
+
+
+/* reactions spacing fix */
+.msg-reactions {
+  display: flex;
+  gap: 4px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.msg-reactions span {
+  cursor: pointer;
+  font-size:13px;
+}
+
+/* intro center better */
+.intro-screen {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  opacity: 0.8;
+}
+
+.chat-window {
+  width: 360px;
+  height: 540px;
+  display: flex;
+  flex-direction: column;
+}
+/* smooth click feel */
+.msg-reactions span {
+  transition: 0.2s;
+}
+
+.msg-reactions span:hover {
+  transform: scale(1.2);
+}
+
+/* THINKING DOTS (ChatGPT style) */
+.thinking {
+  display: flex;
+  gap: 4px;
+  padding: 6px 4px;
+}
+
+.thinking span {
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  animation: bounce 1.2s infinite;
+}
+
+.thinking span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.thinking span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0.5);
+    opacity: 0.4;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.msg-reactions span.active {
+  transform: scale(1.2);
+  opacity: 1;
+  filter: drop-shadow(0 0 4px rgba(255,255,255,0.4));
+}
+.scroll-bottom-btn {
+  position: absolute;
+  bottom: 90px;
+  right: 14px;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: 0.2s;
+  z-index: 10;
+}
+
+.scroll-bottom-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.1);
+}.waveform {
+  display: flex;
+  gap: 3px;
+  margin-left: 8px;
+}
+
+.waveform span {
+  width: 3px;
+  height: 10px;
+  background: #aaa;
+  border-radius: 2px;
+  animation: wave 1s infinite;
+  opacity: 0.3;
+}
+
+.waveform span.active {
+  opacity: 1;
+  background: #00ffcc;
+}
+
+.waveform span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.waveform span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes wave {
+  0%, 100% { height: 6px; }
+  50% { height: 14px; }
+}
+.waveform span {
+  width: 4px;
+  height: 6px;
+  background: #aaa;
+  border-radius: 3px;
+  animation: none;
+  transition: 0.2s;
+}
+
+.waveform span.active {
+  animation: wave 0.6s infinite ease-in-out;
+  background: #00ffcc;
+}
+
+@keyframes wave {
+  0% { height: 6px; }
+  50% { height: 18px; }
+  100% { height: 6px; }
+}
+
+
+/* ================= 🆕 PENDING ATTACHMENT CHIP ================= */
+.pending-file-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 10px 8px;
+  padding: 6px 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  max-width: calc(100% - 20px);
+}
+
+.pending-file-chip img {
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.pending-file-chip .pdf-chip {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.08);
+  color: #ff6b6b;
+  font-size: 16px;
+}
+
+.pending-file-name {
+  flex: 1;
+  font-size: 0.75rem;
+  color: #ddd;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pending-file-chip button {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.pending-file-chip button:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+/* ================= 🆕 MESSAGE ATTACHMENTS ================= */
+.msg-attachment-img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  display: block;
+  transition: 0.2s ease;
+}
+
+.msg-attachment-img:hover {
+  transform: scale(1.02);
+}
+
+.msg-attachment-pdf {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 6px;
+  font-size: 0.8rem;
+}
+
+.msg-attachment-pdf i {
+  color: #ff6b6b;
+  font-size: 18px;
+}
+
+/* ================= 🆕 EDIT MESSAGE ================= */
+.edit-box textarea {
+  width: 100%;
+  min-width: 200px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  padding: 8px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+  justify-content: flex-end;
+}
+
+.edit-actions button {
+  background: rgba(255,255,255,0.08);
+  border: none;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.edit-actions button:hover {
+  background: rgba(255,255,255,0.16);
+}
+
+/* ================= 🆕 STOP BUTTON ================= */
+.stop-btn {
+  color: #ff5555 !important;
+}
+
+.stop-btn:hover {
+  background: rgba(255,85,85,0.15) !important;
+  color: #ff3333 !important;
+}
+
+/* ================= 🆕 RESPONSIVENESS CHECK ================= */
+@media (max-width: 480px) {
+  .pending-file-chip {
+    margin: 0 6px 6px;
+  }
+
+  .msg-attachment-pdf {
+    font-size: 0.75rem;
+  }
+
+  .edit-box textarea {
+    font-size: 0.8rem;
+  }
+
+  .actions button {
+    padding: 5px;
+  }
+}
+
+
+/* ================= 🆕 AI DISCLAIMER ================= */
+.ai-disclaimer {
+  text-align: center;
+  font-size: 0.65rem;
+  color: #fff;
+  padding: 6px 10px 10px;
+  line-height: 1.4;
+  user-select: none;
+}
+
+@media (max-width: 480px) {
+  .ai-disclaimer {
+    font-size: 0.6rem;
+    padding: 5px 8px 8px;
+  }
+}

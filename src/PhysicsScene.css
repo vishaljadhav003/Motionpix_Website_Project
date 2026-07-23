@@ -1,0 +1,85 @@
+.physics-wrapper {
+  position: relative;
+  width: 100%;
+  isolation: isolate;
+  background:black;
+}
+
+.physics-scene {
+  width: 100%;
+  height: 70vh;
+  cursor: grab;
+}
+
+.physics-scene canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.physics-scene:active {
+  cursor: grabbing;
+}
+
+.icon-tooltip {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  padding: 6px 14px;
+  font-size: 15px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 999px;
+  pointer-events: none;
+  white-space: nowrap;
+  animation: tooltipFloat 1.8s ease-in-out infinite;
+  z-index: 20;
+}
+
+@keyframes tooltipFloat {
+  0% {
+    transform: translate(-50%, -100%);
+  }
+  50% {
+    transform: translate(-50%, -110%);
+  }
+  100% {
+    transform: translate(-50%, -100%);
+  }
+}
+
+.physics-ui-layer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.physics-ui-layer .visitor-counter {
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .physics-wrapper {
+    height: 60vh;
+  }
+
+  .icon-tooltip {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .physics-ui-layer {
+    top: 14px;
+    right: 14px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+  .physics-wrapper {
+    background: black;
+  }
+}

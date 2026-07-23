@@ -1,0 +1,187 @@
+.dc-page {
+  background: #000;
+  color: #fff;
+  padding: 90px 20px;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.dc-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+.dc-header span{
+    color: #e50914;
+}
+.dc-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.dc-header p {
+  color: #aaa;
+  margin-top: 12px;
+}
+
+/* TABS */
+.dc-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.dc-tab {
+  padding: 10px 24px;
+  border-radius: 30px;
+  border: 1px solid #444;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dc-tab-active,
+.dc-tab:hover {
+  background: red;
+  border-color: red;
+}
+
+/* GRID */
+.dc-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.dc-card:hover{
+     transform: translateY(-6px);
+     box-shadow: 3px 20px 20px rgba(255, 0, 0, 0.521);
+}
+
+/* CARD */
+.dc-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.dc-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.dc-card-img {
+  height: 200px;
+  overflow: hidden;
+}
+
+.dc-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.dc-card:hover img {
+  transform: scale(1.07);
+}
+
+.dc-card-body {
+  padding: 22px;
+}
+
+.dc-badge {
+  font-size: 0.75rem;
+  color: red;
+  font-weight: 600;
+}
+
+.dc-card-body h3 {
+  margin: 10px 0;
+  font-size: 1.3rem;
+}
+
+.dc-card-body p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.dc-read {
+  display: inline-block;
+  margin-top: 12px;
+  color: red;
+  font-weight: 600;
+}
+
+/* LOAD MORE */
+.dc-load {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.dc-load-btn {
+  padding: 12px 34px;
+  border-radius: 30px;
+  border: none;
+  background: red;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* SCROLL REVEAL */
+.dc-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.dc-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .dc-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .dc-card-img {
+    height: 170px;
+  }
+}
+/* PAGINATION */
+.dc-pagination {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.dc-pagination button {
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: 1px solid #444;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dc-pagination button.active {
+  background: red;
+  border-color: red;
+}
+
+.dc-pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

@@ -1,0 +1,71 @@
+/* Hide default cursor */
+/* body {
+  cursor: none;
+} */
+
+/* BASE */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+}
+
+
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #e50914;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(229, 9, 20, 0.7);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+}
+/* ============================
+   DISABLE CUSTOM CURSOR ON NAVBAR
+============================ */
+
+body.default-cursor-active {
+  cursor: default;
+}
+
+body.default-cursor-active .cursor-dot,
+body.default-cursor-active .cursor-ring {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+/* MOBILE DISABLE */
+@media (max-width: 768px) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+
+  body {
+    cursor: default;
+  }
+}
+/* ===== TEMPORARILY DISABLE CUSTOM CURSOR ===== */
+.disable-custom-cursor .cursor-dot,
+.disable-custom-cursor .cursor-ring {
+  opacity: 0 !important;
+  transform: scale(0.5);
+}

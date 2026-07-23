@@ -1,0 +1,79 @@
+.whatwedo-section {
+  /* background: #0b0b0b; */
+  padding: 100px 0;
+  color: #fff;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.section-title span {
+  color: #e50914 !important; /* MotionPix red */
+}
+
+.section-subtitle {
+  color: #aaa;
+  max-width: 700px;
+  margin: 15px auto 0;
+  font-size: 1.1rem;
+}
+
+.services-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.service-card-5 {
+  background: linear-gradient(145deg, #111, #0d0d0d);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 35px 30px;
+  border-radius: 18px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor:pointer;
+}
+
+.service-card-5::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(229, 9, 20, 0.15),
+    transparent 100%
+  ) !important;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-card-5:hover::before {
+  opacity: 1;
+}
+
+.service-card-5 h4 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.service-card-5 p {
+  font-size: 0.95rem;
+  color: #bbb;
+  line-height: 1.6;
+}
+@media(max-width:768px){
+  .whatwedo-section{
+    background:black;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+
+  .whatwedo-section{
+    background:black;
+  }
+}
